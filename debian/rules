@@ -1,4 +1,10 @@
 #!/usr/bin/make -f
 
+
+export DH_GOLANG_EXCLUDES := examples
+
 %:
-	dh $@
+	dh $@ --builddirectory=_build --buildsystem=golang --with=golang
+
+override_dh_auto_install:
+	dh_auto_install -- --no-binaries

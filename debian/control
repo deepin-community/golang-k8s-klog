@@ -1,15 +1,27 @@
-Source: template-repository
-Section: unknown
+Source: golang-k8s-klog
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Arthur Diniz <arthurbdiniz@gmail.com>
+Section: golang
+Testsuite: autopkgtest-pkg-go
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any,
+               golang-github-go-logr-logr-dev (>= 1.2.0~),
+Standards-Version: 4.6.1
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-k8s-klog
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-k8s-klog.git
+Homepage: https://github.com/kubernetes/klog
+Rules-Requires-Root: no
+XS-Go-Import-Path: k8s.io/klog
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-k8s-klog-dev
+Architecture: all
+Multi-Arch: foreign
+Depends: golang-github-go-logr-logr-dev (>= 1.2.0~),
+         ${misc:Depends}
+Description: leveled execution logs for Go (library)
+ klog is a permanent fork of https://github.com/golang/glog. The decision to
+ create klog was one that wasn't made lightly, but it was necessary due to some
+ drawbacks that are present in glog. Ultimately, the fork was created due to
+ glog not being under active development.
