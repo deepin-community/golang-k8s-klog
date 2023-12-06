@@ -1,0 +1,5 @@
+---
+Bug-Database: https://github.com/kubernetes/klog/issues
+Bug-Submit: https://github.com/kubernetes/klog/issues/new
+Repository: https://github.com/kubernetes/klog.git
+Repository-Browse: https://github.com/kubernetes/klog

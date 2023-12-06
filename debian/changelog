@@ -1,5 +1,31 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-k8s-klog (2.80.1-2) unstable; urgency=medium
 
-  * Initial release
+  [ Shengjing Zhu ]
+  * Add Multi-Arch hint
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Tue, 22 Nov 2022 13:53:16 +0000
+
+golang-k8s-klog (2.80.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release 2.80.1
+  * Exclude examples when build
+  * Update Standards-Version to 4.6.1 (no changes)
+  * Remove unused golang-glog-dev
+  * Bump golang-github-go-logr-logr-dev to 1.2.0
+  * Skip test with v2 path
+
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 25 Oct 2022 02:31:22 +0800
+
+golang-k8s-klog (2.5.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * No-change source-only upload to migrate the package.
+
+ -- Sergio Durigan Junior <sergiodj@debian.org>  Sat, 06 Feb 2021 18:53:04 -0500
+
+golang-k8s-klog (2.5.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #981290)
+
+ -- Arthur Diniz <arthurbdiniz@gmail.com>  Wed, 27 Jan 2021 20:31:46 -0300

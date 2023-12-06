@@ -1,0 +1,31 @@
+From: Shengjing Zhu <zhsj@debian.org>
+Date: Tue, 25 Oct 2022 02:33:16 +0800
+Subject: Skip test with v2 path
+
+---
+ internal/serialize/keyvalues_test.go | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/internal/serialize/keyvalues_test.go b/internal/serialize/keyvalues_test.go
+index 1bf4842..a7fcf02 100644
+--- a/internal/serialize/keyvalues_test.go
++++ b/internal/serialize/keyvalues_test.go
+@@ -62,7 +62,6 @@ func (d *dummyStructWithStringMarshal) MarshalLog() interface{} {
+ 
+ // Test that kvListFormat works as advertised.
+ func TestKvListFormat(t *testing.T) {
+-	var emptyPoint *point
+ 	var testKVList = []struct {
+ 		keysValues []interface{}
+ 		want       string
+@@ -165,10 +164,6 @@ No whitespace.`,
+ 			})},
+ 			want: " pods=[kube-system/kube-dns mi-conf]",
+ 		},
+-		{
+-			keysValues: []interface{}{"point-1", point{100, 200}, "point-2", emptyPoint},
+-			want:       " point-1=\"x=100, y=200\" point-2=\"<panic: value method k8s.io/klog/v2/internal/serialize_test.point.String called using nil *point pointer>\"",
+-		},
+ 		{
+ 			keysValues: []interface{}{struct{ key string }{key: "k1"}, "value"},
+ 			want:       " {k1}=\"value\"",
